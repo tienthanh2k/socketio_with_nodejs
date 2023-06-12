@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chu</title>
+</head>
+<script src="jquery-3.7.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script>
+    $(document).ready(function(){
+        var socket = io("http://localhost:3000");
+
+        $("#mrA").click(function(){
+            socket.emit("Client-send-data", "Hello ban");
+        });
+        //alert("abc")
+
+        socket.on("Server-send-data", function(data){
+            $("#noidung").append(data + ", ");
+            console.log("data")
+        })
+    })
+</script>
+<body>
+    Hello websocket with node js
+    <h2 id="noidung"></h2>
+    <div id="mrA">Click send</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chu</title>
+</head>
+<script src="jquery-3.7.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script>
+    $(document).ready(function(){
+        var socket = io("http://localhost:3000");
+
+        $("#red").click(function(){
+            socket.emit("Client-send-color", "red");
+        });
+        $("#blue").click(function(){
+            socket.emit("Client-send-color", "blue");
+        });
+        $("#yellow").click(function(){
+            socket.emit("Client-send-color", "yellow");
+        });
+
+        socket.on("Server-send-color", function(data){
+            $("body").css("background-color", data)
+        })
+    })
+</script>
+<style>
+    #red, #blue, #yellow {
+        width: 200px;
+        height: 100px;
+    }
+    #red {
+        background-color: red;
+    }
+    #blue {
+        background-color: blue;
+    }
+    #yellow {
+        background-color: yellow;
+    }
+</style>
+<body style="background-color: pink;">
+    <div id="red">Change Red Background</div>
+    <div id="blue">Change Blue Background</div>
+    <div id="yellow">Change Yellow Background</div>
+
+</body>
+</html>

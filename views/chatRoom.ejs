@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom</title>
+</head>
+<script src="jquery-3.7.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<link rel="stylesheet" type="text/css" href="chatRoom.css">
+<script src="chatRoom.js"></script>
+
+<body>
+    <input type="text" id="txtRoom" placeholder="Nhập room"/>
+    <input type="button" id="btnCreateRoom" value="Tạo room"/>
+
+    <div id="wrapper">
+        <h4 >Room hiện tại: <span id="currentRoom"></span></h4>
+        <div id="left">
+            <h3>Các room đang có:</h3>
+            <div id="rooms"></div>
+        </div>
+        
+        <div id="right">
+            <div id="chats"></div>
+        </div>
+        <input type="text" id="txtChat" />
+        <input type="button" id="btnChat" value="Chat"/>
+    </div>
+</body>
+</html>

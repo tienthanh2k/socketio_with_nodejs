@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat box</title>
+</head>
+<script src="jquery-3.7.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<link rel="stylesheet" type="text/css" href="chatBox.css">
+<script src="chatBox.js"></script>
+
+<body>
+    <div id="wrapper">
+        <div id="loginForm">
+            <h3>WHAT's YOUR Name?</h3>
+            <input type="text" id="txtUserName"/>
+            <input type="button" value="Register" id="btnRegister"/>
+        </div>
+
+        <div id="chatForm">
+            <div id="left">
+                <div id="boxTitle">Users Online</div>
+                <div id="boxContent">
+                </div>
+            </div>
+            <div id="right">
+                <div id="sayHi">
+                    Hello <span id="currentUser">Teo</span>
+                    <input type="button" id="btnLogout" value="Logout"/>
+                </div>
+
+                <div id="listMessages">
+
+                </div>
+                <div id="notify-typing"></div>
+                <input type="text" id="txtMessage" />
+                <input type="button" id="btnSendMessage" value="Send" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

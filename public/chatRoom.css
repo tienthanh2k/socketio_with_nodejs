@@ -1,0 +1,26 @@
+body{
+    background-color: aquamarine;
+}
+#wrapper {
+    height: 500px;
+    width: 600px;
+    clear: both;
+}
+#left, #right {
+    min-height: 300px;
+}
+#left {
+    width: 30%;
+    float: left;
+    background-color: chocolate;
+    border: solid 1px pink;
+}
+#right {
+    width: 68%;
+    float: left;
+    background-color: coral;
+    border: solid 1px pink;
+}
+#currentRoom {
+    background-color: blanchedalmond;
+}
